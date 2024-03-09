@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AjouterEtudiant">
+
+    <EditText
+        android:id="@+id/editTextMatricule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Matricule"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMatricule" />
+
+    <EditText
+        android:id="@+id/editTextPrenom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Prénom"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNom" />
+
+    <Spinner
+        android:id="@+id/spinnerDep"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:prompt="@string/select_departement"
+        android:entries="@array/liste_departements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrenom" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDep" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,109 @@
+<resources>
+    <string name="app_name">Devoir4AndroidAPI</string>
+    <string name="select_departement">Sélectionner un département</string>
+    <array name="liste_departements">
+        <item>gg</item>
+        <item>65eaf693e5a7eefed4e422e2</item>
+        <item>Département 3</item>
+    </array>
+</resources>
+
+    <!--
+package com.example.devoir4androidapi
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.ArrayAdapter
+import android.widget.EditText
+import android.widget.Spinner
+import com.example.devoir4androidapi.model.Etudiant
+
+class AddEtudiant : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_addetudiant)
+
+        // Récupérer les détails de l'étudiant de l'Intent
+        val etudiant = intent.getParcelableExtra<Etudiant>("etudiant")
+
+        // Remplir les champs avec les détails de l'étudiant
+        etudiant?.let {
+            var editTextMatricule = findViewById<EditText>(R.id.editTextMatricule)
+            editTextMatricule.setText(it.matricule)
+            var editTextNom = findViewById<EditText>(R.id.editTextNom)
+            editTextNom.setText(it.nom)
+            var editTextPrenom = findViewById<EditText>(R.id.editTextPrenom)
+            editTextPrenom.setText(it.prenom)
+            val spinnerDepartement = findViewById<Spinner>(R.id.spinnerDepartement)
+            // Assurez-vous que la liste des départements est chargée dans le Spinner avant de sélectionner un département
+            // Remplacez "departement" par le département réel de l'étudiant si vous avez cette information
+            val departement = it.departement
+            val spinnerPosition = (spinnerDepartement.adapter as ArrayAdapter<String>).getPosition(departement)
+            spinnerDepartement.setSelection(spinnerPosition)
+        }
+
+        // Reste de votre code...
+    }
+}
+-->
+
+    <!--
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    <EditText
+        android:id="@+id/editTextMatricule"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Matricule"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/editTextNom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Nom"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextMatricule" />
+
+    <EditText
+        android:id="@+id/editTextPrenom"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Prénom"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextNom" />
+
+    <Spinner
+        android:id="@+id/spinnerDepartement"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:prompt="@string/select_departement"
+        android:entries="@array/liste_departements"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextPrenom" />
+
+    <Button
+        android:id="@+id/buttonSave"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enregistrer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinnerDepartement" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+-->
