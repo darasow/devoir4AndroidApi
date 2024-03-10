@@ -1,4 +1,4 @@
-package com.example.devoir4androidapi
+package com.example.devoir4androidapi.etudiant
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.devoir4androidapi.R
 import com.example.devoir4androidapi.model.Departement
 import com.example.devoir4androidapi.model.Etudiant
 import org.json.JSONArray

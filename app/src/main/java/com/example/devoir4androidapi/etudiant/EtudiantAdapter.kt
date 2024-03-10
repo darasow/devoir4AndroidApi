@@ -1,10 +1,11 @@
-package com.example.devoir4androidapi
+package com.example.devoir4androidapi.etudiant
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.devoir4androidapi.R
 import com.example.devoir4androidapi.model.Etudiant
 
 class EtudiantAdapter(val etudiants:ArrayList<Etudiant>): RecyclerView.Adapter<EtudiantAdapter.ContactViewHolder>() {

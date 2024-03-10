@@ -1,4 +1,4 @@
-package com.example.devoir4androidapi
+package com.example.devoir4androidapi.departement
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.os.Parcelable
 import android.util.Log
 import android.view.ContextMenu
+import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -14,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.devoir4androidapi.ConfirmeDialogueLogout
+import com.example.devoir4androidapi.R
+import com.example.devoir4androidapi.RecyclerItemClickListener
 import com.example.devoir4androidapi.model.Departement
 import org.json.JSONArray
 
@@ -44,10 +48,14 @@ class ListeDepartement : AppCompatActivity(),View.OnClickListener {
             })
         )
         registerForContextMenu(recyclerView)
-        getDepartement()
+
 
     } // onCreate
-
+    override fun onResume() {
+        departements = ArrayList()
+        getDepartement()
+        super.onResume()
+    }
     fun parseData(response:String){
         val responseData = JSONArray(response)
         for(i in 0..responseData.length()-1){
@@ -87,7 +95,23 @@ class ListeDepartement : AppCompatActivity(),View.OnClickListener {
         menuInflater.inflate(R.menu.menu_action, menu)
         super.onCreateContextMenu(menu, v, menuInfo)
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_depaction, menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when(item.itemId) {
+
+            R.id.ajouterDep -> {
+                Intent(this, AjoutDepartement::class.java).also {
+                    startActivity(it)
+                }
+                return true
+            }
+            else -> return super.onOptionsItemSelected(item)
+        }
+    }
     override fun onContextItemSelected(item: MenuItem): Boolean {
         when(item.itemId)
         {
@@ -120,7 +144,7 @@ class ListeDepartement : AppCompatActivity(),View.OnClickListener {
             R.id.modalItemShow ->{
                 val departement = departements[longClickedPosition]
                 // Créez un Intent pour démarrer l'activité AddEtudiant et transmettez les détails de l'étudiant
-                val intent = Intent(this, AjouterEtudiant::class.java).apply {
+                val intent = Intent(this, EditDep::class.java).apply {
                     putExtra("departement", departement as Parcelable)
                 }
                 startActivity(intent)

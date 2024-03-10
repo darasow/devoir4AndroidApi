@@ -1,4 +1,4 @@
-package com.example.devoir4androidapi
+package com.example.devoir4androidapi.etudiant
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -15,6 +15,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.android.volley.Request
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import com.example.devoir4androidapi.ConfirmeDialogueLogout
+import com.example.devoir4androidapi.R
+import com.example.devoir4androidapi.RecyclerItemClickListener
+import com.example.devoir4androidapi.departement.ListeDepartement
 import com.example.devoir4androidapi.model.Etudiant
 import org.json.JSONArray
 
@@ -122,7 +126,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
         {
             R.id.modalItemDelete -> {
                 var confirmeFragment = ConfirmeDialogueLogout("", "Supprimer", applicationContext)
-                confirmeFragment.listener = object : ConfirmeDialogueLogout.ConfirmeDialogueListener{
+                confirmeFragment.listener = object :
+                    ConfirmeDialogueLogout.ConfirmeDialogueListener {
                     override fun ondialoguePositiveClick() {
                         if (longClickedPosition != -1) {
                             val etudiant = etudiants[longClickedPosition]
@@ -143,7 +148,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener  {
             R.id.modalItemShow ->{
                 val etudiant = etudiants[longClickedPosition]
                 // Créez un Intent pour démarrer l'activité AddEtudiant et transmettez les détails de l'étudiant
-                val intent = Intent(this, AjouterEtudiant::class.java).apply {
+                val intent = Intent(this, EditEtudiant::class.java).apply {
                     putExtra("etudiant", etudiant as Parcelable)
                 }
                 startActivity(intent)

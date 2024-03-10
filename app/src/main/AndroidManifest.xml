@@ -15,15 +15,25 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".AjouterEtudiant"
+            android:name=".etudiant.EditEtudiant"
             android:exported="false" />
         <activity
-            android:name=".ListeDepartement"
-            android:exported="false"
-            android:parentActivityName=".MainActivity" />
-
+            android:name=".departement.EditDep"
+            android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".departement.AjoutDepartement"
+            android:exported="false"
+            android:parentActivityName=".departement.ListeDepartement" />
+        <activity
+            android:name=".etudiant.AjouterEtudiant"
+            android:exported="false"
+            android:parentActivityName=".departement.ListeDepartement" />
+        <activity
+            android:name=".departement.ListeDepartement"
+            android:exported="false"
+            android:parentActivityName=".etudiant.MainActivity" />
+        <activity
+            android:name=".etudiant.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
